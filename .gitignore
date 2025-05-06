@@ -5,6 +5,7 @@
 *.pkl
 output/*
 train_log/*
+train_log_SAFA/*
 *.mp4
 
 test/

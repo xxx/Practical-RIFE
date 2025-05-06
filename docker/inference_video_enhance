@@ -1,0 +1,2 @@
+#!/bin/sh
+python3 /rife/inference_video_enhance.py --model /rife/train_log_SAFA "$@"

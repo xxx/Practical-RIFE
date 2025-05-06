@@ -10,12 +10,12 @@ import _thread
 import skvideo.io
 from queue import Queue, Empty
 from model.pytorch_msssim import ssim_matlab
+from moviepy import *
 
 warnings.filterwarnings("ignore")
 
 def transferAudio(sourceVideo, targetVideo):
     import shutil
-    import moviepy.editor
     tempAudioFileName = "./temp/audio.mkv"
 
     # split audio from original video file and store in "temp" directory
@@ -76,10 +76,10 @@ if torch.cuda.is_available():
         print('set fp16')
         torch.set_default_tensor_type(torch.cuda.HalfTensor)
 
-try:
+#try:
     from train_log_SAFA.model import Model
-except:
-    print("Please download our model from model list")
+#except:
+#    print("Please download our model from model list")
 model = Model()
 model.device()
 model.load_model(args.modelDir)
